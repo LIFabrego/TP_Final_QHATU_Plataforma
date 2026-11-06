@@ -1,0 +1,35 @@
+# ========== Unity ==========
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+
+# Asset meta data should only be ignored when the corresponding asset is ignored
+!/[Aa]ssets/**/*.meta
+
+# Crash reports
+sysinfo.txt
+
+# ========== Visual Studio / Rider ==========
+.vs/
+.idea/
+*.csproj
+*.sln
+*.user
+*.userprefs
+*.pidb
+*.booproj
+
+# ========== OS ==========
+.DS_Store
+Thumbs.db
+
+# ========== Unity Collaborate ==========
+.collabignore
+
+# Unity user local settings
+UserSettings/
+
