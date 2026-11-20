@@ -1,3 +1,4 @@
+using UnityEngine.EventSystems;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
@@ -52,6 +53,30 @@ public class DialogoInteractivo : MonoBehaviour
     [SerializeField] private Sprite spritePorDefectoError;
     private const int erroresMaximos = 3;
 
+    private void Update()
+    {
+        if (EventSystem.current == null) return;
+
+        // Si se perdió la selección por algún motivo, enfoca el primer botón disponible
+        if (EventSystem.current.currentSelectedGameObject == null)
+        {
+            if (cuadroDeAyuda != null && cuadroDeAyuda.activeInHierarchy && botonVolver != null && botonVolver.interactable)
+            {
+                EventSystem.current.SetSelectedGameObject(botonVolver.gameObject);
+            }
+            else if (botonesRespuesta != null)
+            {
+                foreach (var boton in botonesRespuesta)
+                {
+                    if (boton != null && boton.gameObject.activeInHierarchy && boton.interactable)
+                    {
+                        EventSystem.current.SetSelectedGameObject(boton.gameObject);
+                        break;
+                    }
+                }
+            }
+        }
+    }
     private void Start()
     {
         errores = 0;
@@ -121,8 +146,20 @@ public class DialogoInteractivo : MonoBehaviour
             botonesRespuesta[i].GetComponentInChildren<TextMeshProUGUI>().text = pregunta.opciones[i];
             botonesRespuesta[i].onClick.RemoveAllListeners();
             botonesRespuesta[i].onClick.AddListener(() => SeleccionarRespuesta(index));
-         //   pictogramas[i] = pregunta.pictograma[i];
+            //   pictogramas[i] = pregunta.pictograma[i];
         }
+        //Enfocar el primer botón activo
+        Button primerBotonActivo = null;
+        foreach (var boton in botonesRespuesta)
+        {
+            if (boton != null && boton.gameObject.activeInHierarchy && boton.interactable)
+            {
+                primerBotonActivo = boton;
+                break;
+            }
+        }
+        StartCoroutine(EnfocarBotonSiguienteFrame(primerBotonActivo));
+        ///
         Debug.Log(pregunta.audioNarracion);
         narradorAudioSource.clip = pregunta.audioNarracion;
         if (pregunta.audioNarracion != null)
@@ -195,6 +232,8 @@ public class DialogoInteractivo : MonoBehaviour
         {
             cuadroDeAyuda.SetActive(true);
             botonVolver.gameObject.SetActive(true);
+            // Enfocar el botón "Volver" en el siguiente frame
+            StartCoroutine(EnfocarBotonSiguienteFrame(botonVolver));
 
             preguntaText.gameObject.SetActive(false);
             foreach (var boton in botonesRespuesta)
@@ -220,6 +259,11 @@ public class DialogoInteractivo : MonoBehaviour
         foreach (var boton in botonesRespuesta)
             boton.gameObject.SetActive(true);
         botonAyuda.gameObject.SetActive (true);
+        // Enfocar el primer botón de respuesta en el siguiente frame
+        Button primerBoton = botonesRespuesta != null && botonesRespuesta.Length > 0 ? botonesRespuesta[0] : null;
+        StartCoroutine(EnfocarBotonSiguienteFrame(primerBoton));
+        //
+
         if (ayudaAudioSource != null && ayudaAudioSource.isPlaying)
         {
             ayudaAudioSource.Stop();
@@ -247,6 +291,19 @@ public class DialogoInteractivo : MonoBehaviour
             textoAyuda.text += letra;
             yield return new WaitForSeconds(velocidadTipeo);
         }
+    }
+    private IEnumerator EnfocarBotonSiguienteFrame(Button boton)
+    {
+        yield return null;
+
+        if (EventSystem.current == null || boton == null)
+            yield break;
+
+        if (!boton.gameObject.activeInHierarchy || !boton.interactable)
+            yield break;
+
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(boton.gameObject);
     }
 
 }
