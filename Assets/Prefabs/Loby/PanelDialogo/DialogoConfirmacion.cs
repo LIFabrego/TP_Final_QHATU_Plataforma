@@ -1,8 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class DialogoConfirmacion : MonoBehaviour
@@ -10,6 +12,8 @@ public class DialogoConfirmacion : MonoBehaviour
     public static DialogoConfirmacion Instance;
     private Coroutine corutinaAudioActual;
     private bool cancelarReproduccion = false;
+    private bool esPreguntaSiNo = false;
+
     [SerializeField] private GameObject panelDialogo;
     [SerializeField] private TextMeshProUGUI textoPregunta;
     [SerializeField] private Button botonSi;
@@ -26,8 +30,58 @@ public class DialogoConfirmacion : MonoBehaviour
 
         panelDialogo.SetActive(false);
     }
+    private void Update()
+    {
+        if (panelDialogo == null || !panelDialogo.activeInHierarchy)
+            return;
+
+        // Mantener siempre un botón enfocado si se perdió la selección
+        if (EventSystem.current != null && EventSystem.current.currentSelectedGameObject == null)
+        {
+            Button objetivoRespaldo = (esPreguntaSiNo && botonSi != null && botonSi.gameObject.activeInHierarchy)
+                ? botonSi
+                : botonNo;
+
+            if (objetivoRespaldo != null && objetivoRespaldo.interactable)
+            {
+                EventSystem.current.SetSelectedGameObject(objetivoRespaldo.gameObject);
+            }
+        }
+
+        if (Gamepad.current == null) return;
+
+        // Botón B (buttonEast): niega en pregunta SI/NO o cierra mensaje OK
+        if (Gamepad.current.buttonEast.wasPressedThisFrame)
+        {
+            if (botonNo != null && botonNo.gameObject.activeInHierarchy && botonNo.interactable)
+            {
+                botonNo.onClick.Invoke();
+            }
+            return;
+        }
+
+        // Botón A (buttonSouth):
+        // - Si hay un botón seleccionado, el InputSystemUIInputModule disparará Submit -> OnClick() del botón enfocado.
+        // - Si es pregunta SI/NO y por alguna razón no había botón enfocado, afirma con SI.
+        if (Gamepad.current.buttonSouth.wasPressedThisFrame)
+        {
+            if (EventSystem.current != null && EventSystem.current.currentSelectedGameObject == null)
+            {
+                if (esPreguntaSiNo && botonSi != null && botonSi.gameObject.activeInHierarchy && botonSi.interactable)
+                {
+                    botonSi.onClick.Invoke();
+                }
+                else if (!esPreguntaSiNo && botonNo != null && botonNo.gameObject.activeInHierarchy && botonNo.interactable)
+                {
+                    botonNo.onClick.Invoke();
+                }
+            }
+        }
+    }
+    public bool EstaAbierto => panelDialogo != null && panelDialogo.activeInHierarchy;
     public void MostrarPregunta(string mensaje, AudioClip audioPregunta, Action onSi)
     {
+        esPreguntaSiNo = true;
         panelDialogo.SetActive(true);
         textoPregunta.text = mensaje;
         onConfirmar = onSi;
@@ -58,9 +112,11 @@ public class DialogoConfirmacion : MonoBehaviour
         {
             panelDialogo.SetActive(false);
         });
+        StartCoroutine(EnfocarBotonSiguienteFrame(botonSi));
     }
     public void MostrarPreguntaConAudios(string mensaje, List<AudioClip> listaAudios, Action onConfirmar)
     {
+        esPreguntaSiNo = true;
         panelDialogo.SetActive(true);
         textoPregunta.text = mensaje;
 
@@ -90,9 +146,11 @@ public class DialogoConfirmacion : MonoBehaviour
         {
             StartCoroutine(ReproducirAudiosSecuencial(listaAudios));
         }
+        StartCoroutine(EnfocarBotonSiguienteFrame(botonSi));
     }
     public void MostrarMensajeSolo(string mensaje, AudioClip audioMensaje)
     {
+        esPreguntaSiNo = false;
         panelDialogo.SetActive(true);
         textoPregunta.text = mensaje;
 
@@ -112,9 +170,11 @@ public class DialogoConfirmacion : MonoBehaviour
             panelDialogo.SetActive(false);
             textoBotonNo.text = "NO";
         });
+        StartCoroutine(EnfocarBotonSiguienteFrame(botonNo));
     }
     public void MostrarMensajeSolo(string mensaje, List<AudioClip> listaAudios)
     {
+        esPreguntaSiNo = false;
         panelDialogo.SetActive(true);
         textoPregunta.text = mensaje;
         if (audioSource != null)
@@ -137,6 +197,21 @@ public class DialogoConfirmacion : MonoBehaviour
         }
 
         corutinaAudioActual = StartCoroutine(ReproducirAudiosYCerrar(listaAudios));
+        StartCoroutine(EnfocarBotonSiguienteFrame(botonNo));
+    }
+
+    private IEnumerator EnfocarBotonSiguienteFrame(Button objetivo)
+    {
+        yield return null;
+
+        if (EventSystem.current == null || objetivo == null)
+            yield break;
+
+        if (!objetivo.gameObject.activeInHierarchy || !objetivo.interactable)
+            yield break;
+
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(objetivo.gameObject);
     }
     private IEnumerator ReproducirAudiosSecuencial(List<AudioClip> listaAudios)
     {

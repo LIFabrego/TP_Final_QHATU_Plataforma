@@ -36,6 +36,19 @@ public class PlayerController2 : MonoBehaviour
     {
         commands.Clear();
 
+        // Si el diálogo de confirmación está activo, no permitir el movimiento del jugador
+        bool dialogoActivo = DialogoConfirmacion.Instance != null && DialogoConfirmacion.Instance.EstaAbierto;
+        if (dialogoActivo)
+        {
+            if (_animator != null)
+            {
+                _animator.SetFloat("Horizontal", 0f);
+                _animator.SetFloat("Vertical", 0f);
+                _animator.SetBool("IsRunning", false);
+            }
+            return;
+        }
+
         // Lee tanto WASD/Flechas como Joystick Izquierdo y D-Pad (configurados en Input Manager)
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");

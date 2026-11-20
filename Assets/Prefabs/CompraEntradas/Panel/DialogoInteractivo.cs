@@ -38,6 +38,7 @@ public class DialogoInteractivo : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textoAyuda;
     [SerializeField] private Button botonVolver;
     [SerializeField] private Button botonAyuda;
+    [SerializeField] private Button botonLoby;
 
     [SerializeField] private AudioSource ayudaAudioSource;
 
@@ -226,6 +227,7 @@ public class DialogoInteractivo : MonoBehaviour
     }
     public void MostrarAyuda()
     {
+        botonLoby.gameObject.SetActive(false);
         Pregunta pregunta = preguntaManager.ObtenerPreguntaActual();
 
         if (pregunta != null)
@@ -253,6 +255,7 @@ public class DialogoInteractivo : MonoBehaviour
     public void VolverDeAyuda()
     {
         cuadroDeAyuda.SetActive(false);
+        botonLoby.gameObject.SetActive(true);
         botonVolver.gameObject.SetActive(false);
 
         preguntaText.gameObject.SetActive(true);
