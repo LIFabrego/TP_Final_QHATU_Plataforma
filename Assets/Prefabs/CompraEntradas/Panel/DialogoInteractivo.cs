@@ -137,46 +137,7 @@ public class DialogoInteractivo : MonoBehaviour
         }
     }
 
-    /*private void SeleccionarRespuesta(int index)
-    {
-        bool correcta = preguntaManager.VerificarRespuesta(index);
-
-        if (correcta)
-        {
-            Debug.Log("¡Correcto!");
-            if (preguntaManager.AvanzarPregunta())
-            {
-                MostrarPregunta();
-            }
-            else
-            {
-                Debug.Log("Fin del cuestionario.");
-                SceneManager.LoadScene("CompraComida");
-            }
-        }
-        else
-        {
-            Debug.Log("Incorrecto. Inténtalo de nuevo.");
-        }
-    }*/
-   /* private void SeleccionarRespuesta(int seleccion) // para cambio de color
-    {
-        TipoRespuesta resultado = preguntaManager.VerificarRespuesta(seleccion);
-
-        Color feedbackColor = resultado switch
-        {
-            TipoRespuesta.Correcta => colorCorrecto,
-            TipoRespuesta.Parcial => colorParcial,
-            _ => colorIncorrecto
-        };
-
-        botonesRespuesta[seleccion].image.color = feedbackColor;
-
-        //foreach (var b in botonesRespuesta)
-          //  b.interactable = false;
-
-        StartCoroutine(ContinuarTrasFeedback(resultado == TipoRespuesta.Correcta));
-    }*/
+  
 
     private void SeleccionarRespuesta(int seleccion) //para cambio de Sprite
     {

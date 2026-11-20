@@ -46,11 +46,6 @@ public class PlayerControle : MonoBehaviour
         {
             commands.Add(new AccelerateCommandPlayer(playerMovement, inputVector));
         }
-
-        if (Input.GetKey(KeyCode.Space))
-        {
-            commands.Add(new AccelerateCommandPlayer(playerMovement, inputVector));
-        }
         foreach (var command in commands)
         {
             command.Execute();
