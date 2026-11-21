@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Portada.unity
+    guid: 385ad9c360c067f488fb71b898f9a4c9
+  - enabled: 1
     path: Assets/Scenes/SeleccionMundo.unity
     guid: ec1b06e4d0720b549b2535095b5b3abc
   - enabled: 1
@@ -66,3 +69,4 @@ EditorBuildSettings:
     path: Assets/Scenes/YouLose.unity
     guid: 4d98ef921c97fb048b1c0eb31933304e
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0

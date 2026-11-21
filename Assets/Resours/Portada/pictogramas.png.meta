@@ -1,0 +1,587 @@
+fileFormatVersion: 2
+guid: 43199e0b0f803f841841de4027634c2b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6260831198066532236
+    second: pictogramas_0
+  - first:
+      213: -7406371686034726310
+    second: pictogramas_1
+  - first:
+      213: 8228045748705881023
+    second: pictogramas_2
+  - first:
+      213: -6398445697207262958
+    second: pictogramas_3
+  - first:
+      213: 1056874358205139668
+    second: pictogramas_4
+  - first:
+      213: 7028122336735783107
+    second: pictogramas_5
+  - first:
+      213: -2568104796088792748
+    second: pictogramas_6
+  - first:
+      213: -4448919690752995614
+    second: pictogramas_7
+  - first:
+      213: 4455701269433608475
+    second: pictogramas_8
+  - first:
+      213: -7987353447658874745
+    second: pictogramas_9
+  - first:
+      213: -6017760350395998902
+    second: pictogramas_10
+  - first:
+      213: 957493184104358206
+    second: pictogramas_11
+  - first:
+      213: -1288860149034701351
+    second: pictogramas_12
+  - first:
+      213: 588873111557787624
+    second: pictogramas_13
+  - first:
+      213: 6391948377827901970
+    second: pictogramas_14
+  - first:
+      213: 2523411352569630144
+    second: pictogramas_15
+  - first:
+      213: 5781058851854371117
+    second: pictogramas_16
+  - first:
+      213: -8516050392437046724
+    second: pictogramas_17
+  - first:
+      213: -9106298012715551378
+    second: pictogramas_18
+  - first:
+      213: 6982415716670472707
+    second: pictogramas_19
+  - first:
+      213: -7791217904105594999
+    second: pictogramas_20
+  - first:
+      213: -7458680261300916228
+    second: pictogramas_21
+  - first:
+      213: -7517900155842592119
+    second: pictogramas_22
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: pictogramas_0
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 5068
+        width: 1756
+        height: 1275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 470af88523f0d19a0800000000000000
+      internalID: -6260831198066532236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pictogramas_3
+      rect:
+        serializedVersion: 2
+        x: 3350
+        y: 5149
+        width: 738
+        height: 712
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 211a55fe9872437a0800000000000000
+      internalID: -6398445697207262958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pictogramas_4
+      rect:
+        serializedVersion: 2
+        x: 4517
+        y: 5048
+        width: 722
+        height: 644
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4da490511a5caae00800000000000000
+      internalID: 1056874358205139668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pictogramas_5
+      rect:
+        serializedVersion: 2
+        x: 6016
+        y: 4834
+        width: 1568
+        height: 1202
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c8ef175708e88160800000000000000
+      internalID: 7028122336735783107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pictogramas_6
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 3344
+        width: 1127
+        height: 581
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 459862b5b424c5cd0800000000000000
+      internalID: -2568104796088792748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pictogramas_9
+      rect:
+        serializedVersion: 2
+        x: 1787
+        y: 3275
+        width: 1015
+        height: 903
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7881dc0bb58372190800000000000000
+      internalID: -7987353447658874745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pictogramas_12
+      rect:
+        serializedVersion: 2
+        x: 3155
+        y: 3485
+        width: 862
+        height: 957
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9dd21abe58c0d1ee0800000000000000
+      internalID: -1288860149034701351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pictogramas_13
+      rect:
+        serializedVersion: 2
+        x: 4555
+        y: 3429
+        width: 1533
+        height: 937
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ef4e2899f81c2800800000000000000
+      internalID: 588873111557787624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pictogramas_14
+      rect:
+        serializedVersion: 2
+        x: 6371
+        y: 3171
+        width: 1036
+        height: 976
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21201130f23c4b850800000000000000
+      internalID: 6391948377827901970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pictogramas_16
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 807
+        width: 1324
+        height: 1904
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d29486a75627a3050800000000000000
+      internalID: 5781058851854371117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pictogramas_17
+      rect:
+        serializedVersion: 2
+        x: 2277
+        y: 1794
+        width: 1455
+        height: 1038
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c32c67db949e0d980800000000000000
+      internalID: -8516050392437046724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pictogramas_18
+      rect:
+        serializedVersion: 2
+        x: 4252
+        y: 2218
+        width: 1389
+        height: 731
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e657e35643eef9180800000000000000
+      internalID: -9106298012715551378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pictogramas_19
+      rect:
+        serializedVersion: 2
+        x: 6344
+        y: 742
+        width: 1145
+        height: 1645
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3028f32991686e060800000000000000
+      internalID: 6982415716670472707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pictogramas_20
+      rect:
+        serializedVersion: 2
+        x: 2607
+        y: 316
+        width: 791
+        height: 1045
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98f5f1a889800e390800000000000000
+      internalID: -7791217904105594999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pictogramas_21
+      rect:
+        serializedVersion: 2
+        x: 3599
+        y: 327
+        width: 673
+        height: 597
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cffe0f3f1d17d7890800000000000000
+      internalID: -7458680261300916228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pictogramas_22
+      rect:
+        serializedVersion: 2
+        x: 4496
+        y: 823
+        width: 978
+        height: 839
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 982062ac3ad0ba790800000000000000
+      internalID: -7517900155842592119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 94515c028fecf814b95e2456469f40ab
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      pictogramas_0: -6260831198066532236
+      pictogramas_1: -7406371686034726310
+      pictogramas_10: -6017760350395998902
+      pictogramas_11: 957493184104358206
+      pictogramas_12: -1288860149034701351
+      pictogramas_13: 588873111557787624
+      pictogramas_14: 6391948377827901970
+      pictogramas_15: 2523411352569630144
+      pictogramas_16: 5781058851854371117
+      pictogramas_17: -8516050392437046724
+      pictogramas_18: -9106298012715551378
+      pictogramas_19: 6982415716670472707
+      pictogramas_2: 8228045748705881023
+      pictogramas_20: -7791217904105594999
+      pictogramas_21: -7458680261300916228
+      pictogramas_22: -7517900155842592119
+      pictogramas_3: -6398445697207262958
+      pictogramas_4: 1056874358205139668
+      pictogramas_5: 7028122336735783107
+      pictogramas_6: -2568104796088792748
+      pictogramas_7: -4448919690752995614
+      pictogramas_8: 4455701269433608475
+      pictogramas_9: -7987353447658874745
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
