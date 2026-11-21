@@ -27,14 +27,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Final.unity
     guid: 453d590bd94cdb54aa9cf26c36e37d69
   - enabled: 1
-    path: Assets/Scenes/Historia.unity
-    guid: 30206a0266c41e94b9b6f4a24ebe45e4
-  - enabled: 1
     path: Assets/Scenes/InteriorSala.unity
     guid: 739022f785bce7440acdf41f454989ed
-  - enabled: 1
-    path: Assets/Scenes/Intro.unity
-    guid: a80714f9547521e489a8fd7d609ec282
   - enabled: 1
     path: Assets/Scenes/JuegoLimpieza.unity
     guid: 293bd4724dfaecf4b82ecadc048982bf
@@ -48,17 +42,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Loby.unity
     guid: c4e4f1d2531847a44908522bf8af9b7a
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: 55d325a1957d92a45a7353066b54db72
-  - enabled: 1
     path: Assets/Scenes/MemoriaGame.unity
     guid: b8e4c469307c1dd4385a4065eaa847b6
   - enabled: 1
     path: Assets/Scenes/MenuMinijuegos.unity
     guid: 08a79081311858948ae5dbc6d82ccf36
-  - enabled: 1
-    path: Assets/Scenes/PreIntro.unity
-    guid: f2adc9cb4918179469a129328d7a5486
   - enabled: 1
     path: Assets/Scenes/Rompecabezas.unity
     guid: e8e4f8e57971dbc4997a5dd3b06a344a

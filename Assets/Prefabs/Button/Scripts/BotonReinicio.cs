@@ -27,7 +27,7 @@ public class BotonReinicio : MonoBehaviour
         //Limpiar Valores de Evaluacion
         EvaluacionFinal.Instancia.respuestasJugador.Clear();
         // 4. Reiniciar escena inicial
-        SceneManager.LoadScene("SeleccionMundo");
+        SceneManager.LoadScene("Portada");
     }
     public void MostrarEvaluacion()
     {
