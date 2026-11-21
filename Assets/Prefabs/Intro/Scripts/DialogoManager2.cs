@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -20,6 +22,7 @@ public class DialogoManager2 : MonoBehaviour
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private TextMeshProUGUI speakerNameText;
     [SerializeField] private Button nextButton;
+    [SerializeField] private Button skipButton;
     [SerializeField] private AudioSource AudioSource;
 
     [SerializeField] private Image imagenMama;
@@ -71,9 +74,27 @@ public class DialogoManager2 : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+        // Atajo rápido para Skip con botón Y (buttonNorth) si está asignado y activo
+        if (skipButton != null && skipButton.gameObject.activeInHierarchy && skipButton.interactable)
         {
-            if (!isTyping)
+            if (Gamepad.current != null && Gamepad.current.buttonNorth.wasPressedThisFrame)
+            {
+                skipButton.onClick.Invoke();
+                return;
+            }
+        }
+
+        // Si ya terminó de escribir la línea y nextButton está visible,
+        // mantenemos el foco en nextButton para que A (Submit) o Enter disparen OnNextButtonClicked()
+        if (!isTyping && nextButton != null && nextButton.gameObject.activeInHierarchy)
+        {
+            if (EventSystem.current != null && EventSystem.current.currentSelectedGameObject == null)
+            {
+                EventSystem.current.SetSelectedGameObject(nextButton.gameObject);
+            }
+
+            // En PC con teclado/mouse mantenemos Space o clic izquierdo
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
             {
                 NextLine();
             }
@@ -133,7 +154,7 @@ public class DialogoManager2 : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene("Loby");
         }
     }
 
@@ -141,6 +162,12 @@ public class DialogoManager2 : MonoBehaviour
     {
         currentLine++;
         nextButton.gameObject.SetActive(false);
+
+        if (EventSystem.current != null)
+        {
+            EventSystem.current.SetSelectedGameObject(null);
+        }
+
         if (AudioSource != null)
         {
             AudioSource.Stop();
@@ -161,5 +188,12 @@ public class DialogoManager2 : MonoBehaviour
 
         isTyping = false;
         nextButton.gameObject.SetActive(true);
+
+        // Esperar un frame para que el botón esté activo antes de asignarle el foco
+        yield return null;
+        if (EventSystem.current != null && nextButton != null && nextButton.gameObject.activeInHierarchy)
+        {
+            EventSystem.current.SetSelectedGameObject(nextButton.gameObject);
+        }
     }
 }

@@ -25,6 +25,6 @@ public class SeleccionMundoManager : MonoBehaviour
     public void SeleccionarMundo(int tipo)
     {
         mundoSeleccionado = (Mundo)tipo;
-        UnityEngine.SceneManagement.SceneManager.LoadScene("PreIntro");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("DialogoIntro");
     }
 }
