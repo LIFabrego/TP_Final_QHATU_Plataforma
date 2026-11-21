@@ -38,7 +38,9 @@ public class PlayerController2 : MonoBehaviour
 
         // Si el diálogo de confirmación está activo, no permitir el movimiento del jugador
         bool dialogoActivo = DialogoConfirmacion.Instance != null && DialogoConfirmacion.Instance.EstaAbierto;
-        if (dialogoActivo)
+        // Si el panel de objetivos está abierto, no permitir el movimiento del jugador
+        bool objetivosAbiertos = ObjetivosManager.Instance != null && ObjetivosManager.Instance.PanelAbierto;
+        if (dialogoActivo || objetivosAbiertos )
         {
             if (_animator != null)
             {

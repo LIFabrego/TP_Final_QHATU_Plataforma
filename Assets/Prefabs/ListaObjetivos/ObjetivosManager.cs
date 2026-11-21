@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ObjetivosManager : MonoBehaviour
 {
@@ -20,6 +22,39 @@ public class ObjetivosManager : MonoBehaviour
 
     public List<Objetivo> Objetivos => objetivos;
 
+    public bool PanelAbierto => panelObjetivos != null && panelObjetivos.activeSelf;
+
+    private void Update()
+    {
+        // Solo permitimos alternar el panel de objetivos en escenas donde está habilitado
+        string escenaActual = SceneManager.GetActiveScene().name;
+        bool escenaValida = escenaActual == "Loby" || escenaActual == "InteriorSala";
+
+        if (!escenaValida || botonObjetivos == null || !botonObjetivos.activeInHierarchy)
+            return;
+
+        // Botón Menú / Opciones (Start) en mando de Xbox (y tecla O en PC para pruebas)
+        bool botonMenuMando = Gamepad.current != null && Gamepad.current.startButton.wasPressedThisFrame;
+        bool teclaPruebaPC = Keyboard.current != null && Keyboard.current.oKey.wasPressedThisFrame;
+
+        if (botonMenuMando || teclaPruebaPC)
+        {
+            Button btn = botonObjetivos.GetComponent<Button>();
+            if (btn == null)
+                btn = botonObjetivos.GetComponentInChildren<Button>();
+
+            if (btn != null && btn.interactable)
+            {
+                // Dispara el evento OnClick() configurado en el botón de objetivos
+                btn.onClick.Invoke();
+            }
+            else
+            {
+                // Respaldo por si el GameObject no tiene componente Button
+                TogglePanelObjetivos();
+            }
+        }
+    }
     private void Awake()
     {
         if (Instance == null)
